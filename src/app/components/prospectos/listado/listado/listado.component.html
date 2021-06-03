@@ -1,0 +1,47 @@
+<div class="card mt-5 mr">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-auto me-auto my-2">
+                <h2>Prospectos</h2>
+            </div>
+
+            <div class="col-auto">
+                <button class="btn cc rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir prospecto" routerLink="/captura">
+                    <i class="fas fa-user-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">     
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido Paterno</th>
+                            <th scope="col">Apellido Materno</th>
+                            <th scope="col">Estatus</th>
+                            <th scope="col">Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center" *ngFor="let prospecto of prospectos">
+                            <td>{{ prospecto.nombre }}</td>
+                            <td>{{ prospecto.apellidoPaterno }}</td>
+                            <td>{{ prospecto.apellidoMaterno }}</td>
+                            <td>{{ prospecto.situacion }}</td>
+                            <td><i class="fas fa-eye fa-lg icon-color" routerLink="detalles/{{ prospecto.id }}"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

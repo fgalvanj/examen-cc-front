@@ -1,0 +1,201 @@
+/* You can add global styles to this file, and also import other style files */
+.mr {
+    margin-bottom: 80px;
+}
+
+.footer-class {
+    background-color: #22B673;
+    color: #fff;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:50px;
+    width:100%;
+}
+
+.textT{
+    text-transform: uppercase;
+}
+
+.text-center { 
+    align-content: center;
+}
+
+.textD {
+    font-size: 18px;
+}
+
+.green-icon {
+    border-color: #198754;
+}
+
+.red-icon{
+    border-color: #dc3545;
+}
+
+.img-logo {
+    width: 15%;
+}
+
+.nav-color {
+    background: #22B673;
+}
+
+.icon-color{
+    color: #22B673;
+}
+
+
+.cc{
+    background-color: #82c91e;
+    color: #fff;
+    font-size: 20px;
+    padding: 3px;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+
+.cc:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 2px 20px rgba(130, 201, 30, 1);
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  transform : scale(1.5);
+  -moz-transform : scale(1.5); /* Firefox */
+  -webkit-transform : scale(1.5); /* Chrome - Safari */
+  -o-transform : scale(1.5); /* Opera */
+  -ms-transform : scale(1.5); /* IE9 */
+}
+
+
+.aaDoc{
+    background-color: #F5E710;
+    color: #fff;
+    font-size: 15px;
+    padding: 3px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+
+.aaDoc:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 2px 20px rgba(245, 231, 16, 1);
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  transform : scale(1.5);
+  -moz-transform : scale(1.5); /* Firefox */
+  -webkit-transform : scale(1.5); /* Chrome - Safari */
+  -o-transform : scale(1.5); /* Opera */
+  -ms-transform : scale(1.5); /* IE9 */
+}
+
+.reg{
+    background-color: #82c91e;
+    color: #fff;
+    font-size: 20px;
+    padding: 3px;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+
+.reg:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 2px 20px rgba(130, 201, 30, 1);
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  transform : scale(1.5);
+  -moz-transform : scale(1.5); /* Firefox */
+  -webkit-transform : scale(1.5); /* Chrome - Safari */
+  -o-transform : scale(1.5); /* Opera */
+  -ms-transform : scale(1.5); /* IE9 */
+}
+
+
+.ccEva{
+    background-color: #21ABC6;
+    color: #fff;
+    font-size: 20px;
+    padding: 3px;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+
+.ccEva:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 2px 20px rgba(33, 171, 198, 1);
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  transform : scale(1.5);
+  -moz-transform : scale(1.5); /* Firefox */
+  -webkit-transform : scale(1.5); /* Chrome - Safari */
+  -o-transform : scale(1.5); /* Opera */
+  -ms-transform : scale(1.5); /* IE9 */
+}
+
+.downDoc{
+    background-color: #1BA70B 
+    ;
+    color: #fff;
+    font-size: 15px;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+
+.downDoc:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 2px 20px rgba(27, 167, 11, 1);
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  transform : scale(1.5);
+  -moz-transform : scale(1.5); /* Firefox */
+  -webkit-transform : scale(1.5); /* Chrome - Safari */
+  -o-transform : scale(1.5); /* Opera */
+  -ms-transform : scale(1.5); /* IE9 */
+}
+
+.remDoc{
+    background-color: #970e0e 
+    ;
+    color: #fff;
+    font-size: 15px;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+
+.remDoc:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 2px 20px rgb(151, 14, 14, 1);
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  transform : scale(1.5);
+  -moz-transform : scale(1.5); /* Firefox */
+  -webkit-transform : scale(1.5); /* Chrome - Safari */
+  -o-transform : scale(1.5); /* Opera */
+  -ms-transform : scale(1.5); /* IE9 */
+}

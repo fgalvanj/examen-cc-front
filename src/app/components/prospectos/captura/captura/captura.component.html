@@ -1,0 +1,172 @@
+<div class="card mt-5 mr">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-auto me-auto my-2">
+                <h2>{{titulo}}</h2>
+            </div>
+
+            <div class="col-auto">
+                <button class="btn reg rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="RegresarList" routerLink="/">
+                    <i class="fas fa-undo-alt"></i>
+                </button>
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="card-body">
+
+        <form novalidate [formGroup]="form" (ngSubmit)="saveProspecto()">
+            <div class="row my-3">
+                <h4 class="card-title"><i class="fas fa-user mr-3"></i>Datos Generales</h4>
+                <div class="col-4 mt-3">
+                    <label for="nombre" class="form-label"><strong>Nombre: </strong></label>
+                    <input formControlName="nombre" 
+                            [class.green-icon]="this.form.get('nombre')?.valid" 
+                            [class.red-icon]="this.form.get('nombre')?.invalid && this.form.get('nombre')?.touched" 
+                            type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="col-4 mt-3">
+                    <label for="appaterno" class="form-label"><strong>Apellido paterno:</strong></label>
+                    <input formControlName="apellidoPaterno" 
+                            [class.green-icon]="this.form.get('apellidoPaterno')?.valid" 
+                            [class.red-icon]="this.form.get('apellidoPaterno')?.invalid && this.form.get('apellidoPaterno')?.touched" 
+                            type="text" class="form-control" placeholder="Apellido paterno">
+                </div>
+                <div class="col-4 mt-3">
+                    <label for="apmaterno" class="form-label"><strong>Apellido materno:</strong></label>
+                    <input formControlName="apellidoMaterno" 
+                            [class.green-icon]="this.form.get('apellidoMaterno')?.valid" 
+                            [class.red-icon]="this.form.get('apellidoMaterno')?.invalid && this.form.get('apellidoMaterno')?.touched" 
+                            type="text" class="form-control" placeholder="Apellido paterno">
+                </div>
+            </div>
+            
+            <div  *ngIf="evaluacion">
+                <hr class="my-4">
+                <div class="row my-3">
+                    <h4 class="card-title"><i class="fas fa-map-marker-alt mr-3"></i>Dirección</h4>
+                    <div class="col-4 mt-3">
+                        <label for="calle" class="form-label"><strong>Calle:</strong></label>
+                        <input formControlName="calle" 
+                                [class.green-icon]="this.form.get('calle')?.valid" 
+                                [class.red-icon]="this.form.get('calle')?.invalid && this.form.get('calle')?.touched"
+                                type="text" class="form-control" placeholder="Calle">
+                    </div>
+                    <div class="col-2 mt-3">
+                        <label for="numero" class="form-label"><strong>Número:</strong></label>
+                        <input formControlName="numero" 
+                                [class.green-icon]="this.form.get('numero')?.valid" 
+                                [class.red-icon]="this.form.get('numero')?.invalid && this.form.get('numero')?.touched" 
+                                type="text" class="form-control" placeholder="Número">
+                    </div>
+                    <div class="col-4 mt-3">
+                        <label for="colonia" class="form-label"><strong>Colonia:</strong></label>
+                        <input formControlName="colonia" 
+                                [class.green-icon]="this.form.get('colonia')?.valid" 
+                                [class.red-icon]="this.form.get('colonia')?.invalid && this.form.get('colonia')?.touched"
+                                type="text" class="form-control" placeholder="colonia">
+                    </div>
+                    <div class="col-2 mt-3">
+                        <label for="codigoPostal" class="form-label"><strong>Código Postal:</strong></label>
+                        <input formControlName="codigoPostal" 
+                                [class.green-icon]="this.form.get('codigoPostal')?.valid" 
+                                [class.red-icon]="this.form.get('codigoPostal')?.invalid && this.form.get('codigoPostal')?.touched"
+                                type="text" class="form-control" maxlength="5" minlength="5" placeholder="Código postal">
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="evaluacion">
+                <hr class="my-4">
+                <div class="row my-3">
+                    <div class="col-6">
+                        <h4 class="card-title my-2"><i class="fas fa-phone mr-2"></i>Datos de contacto</h4>
+                        <label for="telefono" class="form-label mt-3">Teléfono:</label>
+                        <input formControlName="telefono" 
+                                [class.green-icon]="this.form.get('telefono')?.valid" 
+                                [class.red-icon]="this.form.get('telefono')?.invalid && this.form.get('telefono')?.touched"
+                                type="text" class="form-control" maxlength="10" placeholder="Teléfono">
+                    </div>
+    
+                    <div class="col-6">
+                        <h4 class="card-title my-2"><i class="fas fa-address-card mr-2"></i>Datos fiscales</h4>
+                        <label for="rfc" class="form-label mt-3">RFC:</label>
+                        <input formControlName="rfc" 
+                                [class.green-icon]="this.form.get('rfc')?.valid" 
+                                [class.red-icon]="this.form.get('rfc')?.invalid && this.form.get('rfc')?.touched"
+                                type="text" class="form-control textT" maxlength="13" placeholder="RFC">
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="situacion">
+                <hr class="my-4">
+                <h4 class="card-title my-2"><i class="fas fa-user-clock mr-2"></i>Situación del prospecto</h4>
+                <div class="row my-3">
+                    <div class="col-12">
+                        <label for="situacion" class="form-label my-2">Estatus:</label>
+                        <select class="form-select" formControlName="situacion" (change)="changeSituacion()">
+                            <option *ngFor="let s of estatus" [ngValue]="s">{{s}}</option>
+
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row my-3">
+                    <div class="col-12">
+                        <label for="observaciones" class="form-label my-2">Observaciones</label>
+                        <textarea class="form-control" formControlName="observaciones" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="evaluacion">
+                <hr class="my-4">
+                <div class="row my-3">
+                    <div class="row">
+                        <div class="col-auto me-auto">
+                            <h4 class="card-title my-2"><i class="fas fa-file-alt mr-2"></i>Cargar Documentación</h4>
+                        </div>
+    
+                        <div class="col-auto me-auto col-11 mt-3">
+                            <input (change)="seleccionarArchivo($event)" class="form-control" type="file" id="file" formControlName="documento">
+                        </div>
+
+                        <!--div class="col-auto">
+                            <button class="btn aaDoc rounded-circle" (click)="addDocs()" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir documento">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div-->
+                    </div>
+    
+                    <!--div class="row" *ngFor="let documento of documentos.controls; let i = index">                   
+                        <div class="col-auto me-auto col-11 mt-3">
+                            <input  class="form-control" type="file" id="documento" formControlName="documento">
+                            <div class="col-auto mt-3">
+                                <button class="btn remDoc rounded-circle" (click)="deleteDocumentos(i)" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Quitar documento">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div-->
+                </div>
+            </div>
+
+
+            <div class="row my-5">
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-success" [disabled]="this.form.invalid" role="button"><i class="far fa-save"></i> Guardar</button>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="button" class="btn btn-danger" (click)="openAlert()">
+                        <i class="fas fa-times"></i> 
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+

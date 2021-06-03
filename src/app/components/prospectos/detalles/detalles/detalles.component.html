@@ -1,0 +1,131 @@
+<div class="container mt-4 mr">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-auto me-auto my-2">
+                    <h4 class="card-title">Detalles Prospecto</h4>
+                </div>
+                <div class="col-auto">
+                    <button class="btn ccEva rounded-circle " type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Evaluar prospecto" routerLink="/evaluar/{{prospecto.id}}">
+                        <i class="fas fa-user-edit"></i>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn reg rounded-circle " type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Regresar" routerLink="/">
+                        <i class="fas fa-undo-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-7">
+                    <h4 class="card-title"><i class="fas fa-user mr-3"></i>Datos Generales</h4>
+                    
+                    <hr class="mb-4">
+
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <h5 for="nombre" class="form-label"><i class="fas fa-user-circle mr-2"></i><strong>Nombre:</strong></h5>
+                        </div>
+                        <div class="col-9">
+                            <p class="card-text textD">
+                                {{prospecto.nombre}} {{prospecto.apellidoPaterno}} {{prospecto.apellidoMaterno}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <h5 for="nombre" class="form-label"><i class="fas fa-map-marker-alt mr-2"></i><strong> Dirección:</strong></h5>
+                        </div>
+                        <div class="col-9">
+                            <p class="card-text textD">
+                                {{prospecto.calle}}, {{prospecto.numero}}, {{prospecto.colonia}}, C.P. {{prospecto.codigoPostal}}                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <h5 for="nombre" class="form-label"><i class="fas fa-phone mr-2"></i><strong>Teléfono:</strong></h5>
+                        </div>
+                        <div class="col-9">
+                            <p class="card-text textD">
+                                {{prospecto.telefono}}                           
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <h5 for="nombre" class="form-label"><i class="fas fa-address-card mr-2"></i><strong>RFC:</strong></h5>
+                        </div>
+                        <div class="col-9">
+                            <p class="card-text textD textT">
+                                {{prospecto.rfc}}                          
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-5">
+                    <h4 class="card-title"><i class="fas fa-user-clock mr-2"></i>Situación del prospecto</h4>
+                    <hr class="mb-4">
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <h5 for="nombre" class="form-label"><i class="fas fa-info-circle mr-2"></i><strong>Estatus:</strong></h5>
+                        </div>
+                        <div class="col-8">
+                            <p class="card-text textD">
+                                {{prospecto.situacion}}                         
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <h5 for="nombre" class="form-label"><i class="fas fa-file-alt mr-2"></i><strong>Observaciones:</strong></h5>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <p class="card-text textD ml-4">
+                                {{prospecto.observaciones}}                         
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h4 class="card-title"><i class="fas fa-folder-open mr-3"></i>Documentos</h4>
+                    
+                    <hr class="mb-4">
+
+                    <div class="row mb-3">
+                        <div class="col-8">
+                            <h5 for="nombreDocumento" class="form-label"><strong>Nombre del archivo:</strong></h5>
+                        </div>
+                        <!--div class="col-4 text-center">
+                            <h5 for="descargar" class="form-label"><strong>Descargar</strong></h5>
+                        </div-->
+                    </div>
+                 
+                    <div class="row mb-3" *ngFor="let a of arrayArchivos">
+                        <div class="col-8">
+                            <p class="card-text textD">
+                                {{a.nombreArchivo}}
+                                </p>
+                        </div>
+                        <!--div class="col-4 text-center">
+                            <button class="btn downDoc rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Descargar documento">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
